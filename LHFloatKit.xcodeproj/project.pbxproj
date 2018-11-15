@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		71E4E204219D4BC700B25887 /* LHFloatKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E4E202219D4BC700B25887 /* LHFloatKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71E4E20B219D4BDB00B25887 /* FloatingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4E20A219D4BDB00B25887 /* FloatingWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71E4E1FF219D4BC700B25887 /* LHFloatKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LHFloatKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E4E202219D4BC700B25887 /* LHFloatKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHFloatKit.h; sourceTree = "<group>"; };
 		71E4E203219D4BC700B25887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71E4E20A219D4BDB00B25887 /* FloatingWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				71E4E202219D4BC700B25887 /* LHFloatKit.h */,
+				71E4E20A219D4BDB00B25887 /* FloatingWindow.swift */,
 				71E4E203219D4BC700B25887 /* Info.plist */,
 			);
 			path = LHFloatKit;
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71E4E20B219D4BDB00B25887 /* FloatingWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

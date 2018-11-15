@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71A922D0219D5AF8008E3C10 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922CF219D5AF8008E3C10 /* UIApplication+.swift */; };
+		71A922D2219D5B13008E3C10 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922D1219D5B13008E3C10 /* UIViewController+.swift */; };
+		71A922D4219D5B40008E3C10 /* LHFloatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922D3219D5B40008E3C10 /* LHFloatViewController.swift */; };
+		71A922D6219D5B5B008E3C10 /* LHFloatWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922D5219D5B5B008E3C10 /* LHFloatWindow.swift */; };
+		71A922D9219D5BBE008E3C10 /* LHConvenientMethods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A922D8219D5BBE008E3C10 /* LHConvenientMethods.framework */; };
+		71A922DB219D5E68008E3C10 /* LHFloatContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922DA219D5E68008E3C10 /* LHFloatContainerView.swift */; };
+		71A922E0219D7633008E3C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A922DF219D7633008E3C10 /* Assets.xcassets */; };
 		71E4E204219D4BC700B25887 /* LHFloatKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E4E202219D4BC700B25887 /* LHFloatKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71E4E20B219D4BDB00B25887 /* FloatingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4E20A219D4BDB00B25887 /* FloatingWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71A922CF219D5AF8008E3C10 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		71A922D1219D5B13008E3C10 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		71A922D3219D5B40008E3C10 /* LHFloatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHFloatViewController.swift; sourceTree = "<group>"; };
+		71A922D5219D5B5B008E3C10 /* LHFloatWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHFloatWindow.swift; sourceTree = "<group>"; };
+		71A922D8219D5BBE008E3C10 /* LHConvenientMethods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LHConvenientMethods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A922DA219D5E68008E3C10 /* LHFloatContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHFloatContainerView.swift; sourceTree = "<group>"; };
+		71A922DF219D7633008E3C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71E4E1FF219D4BC700B25887 /* LHFloatKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LHFloatKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71E4E202219D4BC700B25887 /* LHFloatKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHFloatKit.h; sourceTree = "<group>"; };
 		71E4E203219D4BC700B25887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		71E4E20A219D4BDB00B25887 /* FloatingWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,17 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A922D9219D5BBE008E3C10 /* LHConvenientMethods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71A922D7219D5BBE008E3C10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71A922D8219D5BBE008E3C10 /* LHConvenientMethods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		71E4E1F5219D4BC700B25887 = {
 			isa = PBXGroup;
 			children = (
 				71E4E201219D4BC700B25887 /* LHFloatKit */,
 				71E4E200219D4BC700B25887 /* Products */,
+				71A922D7219D5BBE008E3C10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,7 +71,12 @@
 			isa = PBXGroup;
 			children = (
 				71E4E202219D4BC700B25887 /* LHFloatKit.h */,
-				71E4E20A219D4BDB00B25887 /* FloatingWindow.swift */,
+				71A922CF219D5AF8008E3C10 /* UIApplication+.swift */,
+				71A922D1219D5B13008E3C10 /* UIViewController+.swift */,
+				71A922D5219D5B5B008E3C10 /* LHFloatWindow.swift */,
+				71A922D3219D5B40008E3C10 /* LHFloatViewController.swift */,
+				71A922DA219D5E68008E3C10 /* LHFloatContainerView.swift */,
+				71A922DF219D7633008E3C10 /* Assets.xcassets */,
 				71E4E203219D4BC700B25887 /* Info.plist */,
 			);
 			path = LHFloatKit;
@@ -123,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A922E0219D7633008E3C10 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71E4E20B219D4BDB00B25887 /* FloatingWindow.swift in Sources */,
+				71A922D0219D5AF8008E3C10 /* UIApplication+.swift in Sources */,
+				71A922D2219D5B13008E3C10 /* UIViewController+.swift in Sources */,
+				71A922D6219D5B5B008E3C10 /* LHFloatWindow.swift in Sources */,
+				71A922DB219D5E68008E3C10 /* LHFloatContainerView.swift in Sources */,
+				71A922D4219D5B40008E3C10 /* LHFloatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,15 +297,17 @@
 		71E4E208219D4BC700B25887 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K3ER26RU8S;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = LHFloatKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,15 +324,17 @@
 		71E4E209219D4BC700B25887 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = K3ER26RU8S;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = LHFloatKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

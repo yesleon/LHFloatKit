@@ -18,6 +18,7 @@ class LHFloatViewController: UIViewController {
     
     lazy var buttonBottomConstraint: NSLayoutConstraint = view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: self.button.bottomAnchor, multiplier: 1)
     lazy var buttonTrailingConstraint: NSLayoutConstraint = view.safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: self.button.trailingAnchor, multiplier: 1)
+    lazy var buttonTopConstraint = view.bottomAnchor.constraint(equalToSystemSpacingBelow: self.button.topAnchor, multiplier: 1)
     
     lazy var button: UIButton = {
         let button = UIButton(type: .custom)
@@ -58,6 +59,13 @@ class LHFloatViewController: UIViewController {
     func connect(with vc: UIViewController) {
         let animationHandler: (TimeInterval) -> Void = { duration in
             self.containerView.setSafeArea(fromSafeAreaProvider: vc.safeAreaProvider)
+            if vc.prefersFloatingWindowHidden {
+                self.buttonBottomConstraint.isActive = false
+                self.buttonTopConstraint.isActive = true
+            } else {
+                self.buttonBottomConstraint.isActive = true
+                self.buttonTopConstraint.isActive = false
+            }
             UIView.animate(withDuration: duration, animations: {
                 self.containerView.alpha = vc.prefersFloatingWindowHidden ? 0 : 1
                 self.containerView.layoutIfNeeded()

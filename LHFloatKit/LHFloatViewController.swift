@@ -20,14 +20,7 @@ class LHFloatViewController: UIViewController {
     lazy var buttonTrailingConstraint: NSLayoutConstraint = view.safeAreaLayoutGuide.trailingAnchor.constraint(equalToSystemSpacingAfter: self.button.trailingAnchor, multiplier: 1)
     lazy var buttonTopConstraint = view.bottomAnchor.constraint(equalToSystemSpacingBelow: self.button.topAnchor, multiplier: 1)
     
-    lazy var button: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "icons8-plus_2_math", in: bundle, compatibleWith: nil), for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.contentVerticalAlignment = .fill
-        button.contentHorizontalAlignment = .fill
-        return button
-    }()
+    lazy var button = AddButton()
     
     private lazy var updateButtonConstraintsHandler: (TimeInterval) -> Void = { _ in
         self.view.setNeedsUpdateConstraints()

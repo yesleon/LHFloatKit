@@ -49,10 +49,14 @@ extension UIViewController {
         }
     }
     
-    @objc open func handleFloatingWindowEvents(_ sender: UIView) {
+    @objc open func floatButtonDidPress(_ sender: UIButton) {
         if let child = childForFloatingWindowEvents {
-            child.handleFloatingWindowEvents(sender)
+            child.floatButtonDidPress(sender)
         }
+    }
+    
+    @objc open func dragItemForFloatButton() -> UIDragItem? {
+        return childForFloatingWindowEvents?.dragItemForFloatButton()
     }
     
 }

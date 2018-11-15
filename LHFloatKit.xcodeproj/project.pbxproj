@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7199D5EC219D7B0300953FAE /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7199D5EB219D7B0300953FAE /* AddButton.swift */; };
 		71A922D0219D5AF8008E3C10 /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922CF219D5AF8008E3C10 /* UIApplication+.swift */; };
 		71A922D2219D5B13008E3C10 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922D1219D5B13008E3C10 /* UIViewController+.swift */; };
 		71A922D4219D5B40008E3C10 /* LHFloatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A922D3219D5B40008E3C10 /* LHFloatViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7199D5EB219D7B0300953FAE /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		71A922CF219D5AF8008E3C10 /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		71A922D1219D5B13008E3C10 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		71A922D3219D5B40008E3C10 /* LHFloatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHFloatViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				71E4E202219D4BC700B25887 /* LHFloatKit.h */,
 				71A922CF219D5AF8008E3C10 /* UIApplication+.swift */,
 				71A922D1219D5B13008E3C10 /* UIViewController+.swift */,
+				7199D5EB219D7B0300953FAE /* AddButton.swift */,
 				71A922D5219D5B5B008E3C10 /* LHFloatWindow.swift */,
 				71A922D3219D5B40008E3C10 /* LHFloatViewController.swift */,
 				71A922DA219D5E68008E3C10 /* LHFloatContainerView.swift */,
@@ -164,6 +167,7 @@
 				71A922D0219D5AF8008E3C10 /* UIApplication+.swift in Sources */,
 				71A922D2219D5B13008E3C10 /* UIViewController+.swift in Sources */,
 				71A922D6219D5B5B008E3C10 /* LHFloatWindow.swift in Sources */,
+				7199D5EC219D7B0300953FAE /* AddButton.swift in Sources */,
 				71A922DB219D5E68008E3C10 /* LHFloatContainerView.swift in Sources */,
 				71A922D4219D5B40008E3C10 /* LHFloatViewController.swift in Sources */,
 			);

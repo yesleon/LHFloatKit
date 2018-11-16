@@ -30,7 +30,6 @@ class LHFloatContainerView: UIView {
     }
     
     func setSafeArea(fromSafeAreaProvider provider: UIView) {
-        provider.layoutIfNeeded()
         NSLayoutConstraint.activate([leftConstraint, topConstraint, widthConstraint, heightConstraint])
         let layoutFrame = provider.convert(provider.safeAreaLayoutGuide.layoutFrame, to: self)
         leftConstraint.constant = layoutFrame.minX

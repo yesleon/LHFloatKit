@@ -46,7 +46,7 @@ class LHFloatWindow: UIWindow {
         if topVC.isBeingDismissed, let presentingViewController = topVC.presentingViewController {
             topVC = presentingViewController
         }
-        floatVC.connect(with: topVC)
+        floatVC.connectedViewController = topVC
     }
     
 }

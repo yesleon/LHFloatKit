@@ -22,8 +22,12 @@ class LHFloatViewController: UIViewController {
     
     lazy var button = AddButton()
     
-    private lazy var updateButtonConstraintsHandler: (TimeInterval) -> Void = { _ in
-        self.view.setNeedsUpdateConstraints()
+    weak var connectedViewController: UIViewController? {
+        didSet {
+            if let vc = connectedViewController {
+                updateButtonConstraints(from: vc)
+            }
+        }
     }
     
     override func loadView() {
@@ -39,41 +43,28 @@ class LHFloatViewController: UIViewController {
         buttonTrailingConstraint.isActive = true
         button.widthAnchor.constraint(equalToConstant: 50).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        updateButtonConstraintsHandler(0)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { (context) in
-            self.updateButtonConstraintsHandler(context.transitionDuration)
+            if let vc = self.connectedViewController {
+                self.updateButtonConstraints(from: vc)
+            }
         })
     }
     
-    func connect(with vc: UIViewController) {
-        let animationHandler: (TimeInterval) -> Void = { duration in
-            self.containerView.setSafeArea(fromSafeAreaProvider: vc.safeAreaProvider)
-            if vc.prefersFloatingWindowHidden {
-                self.buttonBottomConstraint.isActive = false
-                self.buttonTopConstraint.isActive = true
-            } else {
-                self.buttonBottomConstraint.isActive = true
-                self.buttonTopConstraint.isActive = false
-            }
-            UIView.animate(withDuration: duration, animations: {
-                self.containerView.alpha = vc.prefersFloatingWindowHidden ? 0 : 1
-                self.containerView.layoutIfNeeded()
-            })
+    func updateButtonConstraints(from vc: UIViewController) {
+        containerView.setSafeArea(fromSafeAreaProvider: vc.safeAreaProvider)
+        if vc.prefersFloatingWindowHidden {
+            buttonBottomConstraint.isActive = false
+            buttonTopConstraint.isActive = true
+        } else {
+            buttonTopConstraint.isActive = false
+            buttonBottomConstraint.isActive = true
         }
-        updateButtonConstraintsHandler = { duration in
-            if let transitionCoordinator = vc.transitionCoordinator {
-                transitionCoordinator.animateAlongsideTransition(in: self.floatWindow, animation: { context in
-                    animationHandler(context.transitionDuration)
-                })
-            } else {
-                animationHandler(duration)
-            }
-        }
-        updateButtonConstraintsHandler(0)
+        containerView.alpha = vc.prefersFloatingWindowHidden ? 0 : 1
+        containerView.layoutIfNeeded()
     }
     
 }

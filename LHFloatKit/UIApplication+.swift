@@ -27,8 +27,8 @@ extension UIApplication {
                 let floatingVC = LHFloatViewController()
                 let window = LHFloatWindow(floatingVC: floatingVC)
                 window.floatVC.button.addTarget(self, action: #selector(didPressFloatButton), for: .touchUpInside)
-                window.floatVC.button.dragItemProvider = {
-                     return self.keyWindow?.topViewController?.dragItemForFloatButton()
+                window.floatVC.button.dragItemProvider = { [weak self] in
+                     return self?.keyWindow?.topViewController?.dragItemForFloatButton()
                 }
                 window.persistAndShow()
                 NotificationCenter.default.addObserver(self, selector: #selector(updateFloatWindowAppearance), name: floatButtonAppearanceNeedsUpdate, object: nil)

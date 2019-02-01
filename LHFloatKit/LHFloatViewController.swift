@@ -56,14 +56,14 @@ class LHFloatViewController: UIViewController {
     
     func updateButtonConstraints(from vc: UIViewController) {
         containerView.setSafeArea(fromSafeAreaProvider: vc.safeAreaProvider)
-        if vc.prefersFloatingWindowHidden {
+        if vc.prefersFloatingActionButtonHidden {
             buttonBottomConstraint.isActive = false
             buttonTopConstraint.isActive = true
         } else {
             buttonTopConstraint.isActive = false
             buttonBottomConstraint.isActive = true
         }
-        containerView.alpha = vc.prefersFloatingWindowHidden ? 0 : 1
+        containerView.alpha = vc.prefersFloatingActionButtonHidden ? 0 : 1
         containerView.layoutIfNeeded()
     }
     

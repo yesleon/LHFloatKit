@@ -28,14 +28,14 @@ extension UIApplication {
                 let window = LHFloatWindow(floatingVC: floatingVC)
                 window.floatVC.button.addTarget(self, action: #selector(didPressFloatButton), for: .touchUpInside)
                 window.floatVC.button.dragItemProvider = { [weak self] in
-                     return self?.keyWindow?.topViewController?.dragItemForFloatButton()
+                     return self?.keyWindow?.topViewController?.dragItemForFloatingActionButton()
                 }
                 window.persistAndShow()
-                NotificationCenter.default.addObserver(self, selector: #selector(updateFloatWindowAppearance), name: floatButtonAppearanceNeedsUpdate, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(updateFloatWindowAppearance), name: floatingButtonAppearanceNeedsUpdate, object: nil)
                 
             } else {
                 guard let window = floatWindow else { return }
-                NotificationCenter.default.removeObserver(self, name: floatButtonAppearanceNeedsUpdate, object: nil)
+                NotificationCenter.default.removeObserver(self, name: floatingButtonAppearanceNeedsUpdate, object: nil)
                 window.destroy()
             }
         }
@@ -49,8 +49,8 @@ extension UIApplication {
     
     @objc private func didPressFloatButton(_ sender: UIButton) {
         guard let topVC = keyWindow?.topViewController else { return }
-        if topVC.canHandleFloatingWindowEvents {
-            topVC.floatButtonDidPress(sender)
+        if topVC.canHandleFloatingActionButtonEvents {
+            topVC.floatingActionButtonDidPress(sender)
         }
     }
     

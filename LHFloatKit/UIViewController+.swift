@@ -9,19 +9,19 @@
 import Foundation
 
 
-let floatButtonAppearanceNeedsUpdate = NSNotification.Name("FloatingWindowAppearanceNeedsUpdate")
+let floatingButtonAppearanceNeedsUpdate = NSNotification.Name("FloatingWindowAppearanceNeedsUpdate")
 
 extension UIViewController {
     
-    @objc open var prefersFloatingWindowHidden: Bool {
-        if let child = childForFloatingWindowHidden {
-            return child.prefersFloatingWindowHidden
+    @objc open var prefersFloatingActionButtonHidden: Bool {
+        if let child = childForFloatingActionButtonHidden {
+            return child.prefersFloatingActionButtonHidden
         } else {
             return true
         }
     }
     
-    @objc open var childForFloatingWindowHidden: UIViewController? {
+    @objc open var childForFloatingActionButtonHidden: UIViewController? {
         return nil
     }
     
@@ -33,30 +33,30 @@ extension UIViewController {
         return nil
     }
     
-    @objc open func setNeedsFloatingWindowAppearanceUpdate() {
-        NotificationCenter.default.post(name: floatButtonAppearanceNeedsUpdate, object: nil)
+    @objc open func setNeedsFloatingActionButtonAppearanceUpdate() {
+        NotificationCenter.default.post(name: floatingButtonAppearanceNeedsUpdate, object: nil)
     }
     
-    @objc open var childForFloatingWindowEvents: UIViewController? {
+    @objc open var childForFloatingActionButtonEvents: UIViewController? {
         return nil
     }
     
-    @objc open var canHandleFloatingWindowEvents: Bool {
-        if let child = childForFloatingWindowEvents {
-            return child.canHandleFloatingWindowEvents
+    @objc open var canHandleFloatingActionButtonEvents: Bool {
+        if let child = childForFloatingActionButtonEvents {
+            return child.canHandleFloatingActionButtonEvents
         } else {
             return false
         }
     }
     
-    @objc open func floatButtonDidPress(_ sender: UIButton) {
-        if let child = childForFloatingWindowEvents {
-            child.floatButtonDidPress(sender)
+    @objc open func floatingActionButtonDidPress(_ sender: UIButton) {
+        if let child = childForFloatingActionButtonEvents {
+            child.floatingActionButtonDidPress(sender)
         }
     }
     
-    @objc open func dragItemForFloatButton() -> UIDragItem? {
-        return childForFloatingWindowEvents?.dragItemForFloatButton()
+    @objc open func dragItemForFloatingActionButton() -> UIDragItem? {
+        return childForFloatingActionButtonEvents?.dragItemForFloatingActionButton()
     }
     
 }
@@ -64,7 +64,7 @@ extension UIViewController {
 
 extension UINavigationController {
     
-    open override var childForFloatingWindowHidden: UIViewController? {
+    open override var childForFloatingActionButtonHidden: UIViewController? {
         return topViewController
     }
     
@@ -72,7 +72,7 @@ extension UINavigationController {
         return topViewController
     }
     
-    override open var childForFloatingWindowEvents: UIViewController? {
+    override open var childForFloatingActionButtonEvents: UIViewController? {
         return topViewController
     }
     
@@ -80,7 +80,7 @@ extension UINavigationController {
 
 extension UIPageViewController {
     
-    open override var childForFloatingWindowHidden: UIViewController? {
+    open override var childForFloatingActionButtonHidden: UIViewController? {
         return viewControllers?.first
     }
     
@@ -88,7 +88,7 @@ extension UIPageViewController {
         return viewControllers?.first
     }
     
-    override open var childForFloatingWindowEvents: UIViewController? {
+    override open var childForFloatingActionButtonEvents: UIViewController? {
         return viewControllers?.first
     }
     
@@ -96,7 +96,7 @@ extension UIPageViewController {
 
 extension UITabBarController {
     
-    open override var childForFloatingWindowHidden: UIViewController? {
+    open override var childForFloatingActionButtonHidden: UIViewController? {
         return selectedViewController
     }
     
@@ -104,7 +104,7 @@ extension UITabBarController {
         return selectedViewController
     }
     
-    override open var childForFloatingWindowEvents: UIViewController? {
+    override open var childForFloatingActionButtonEvents: UIViewController? {
         return selectedViewController
     }
     
